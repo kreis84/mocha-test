@@ -7,7 +7,7 @@ const sinon = require('sinon')
 
 describe('Memoize decorator', () => {
     it('should return same result as the wrapped function', ()=>{
-        const square = (n) => n**2
+        const square = (n) => n*n
         const memoizedSquare = memoize(square);
         const rawResult = square(5)
         const memoizedResult = memoizedSquare(5)
@@ -29,7 +29,7 @@ describe('Memoize decorator', () => {
     })
 
     it('shoul call the wrapped function only once if called with the same parameters', () => {
-        const square = (n) => n**2
+        const square = (n) => n*n
         const spy = sinon.spy(square)
         const memoizedSquare = memoize(spy)
 
@@ -45,6 +45,10 @@ describe('Memoize decorator', () => {
         result1.should.equal(25)
         result2.should.equal(25)
         result3.should.equal(25)
+
+    })
+
+    it('should memoize functions which operate on various number of parameters', () => {
 
     })
 })
