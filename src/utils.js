@@ -16,11 +16,12 @@ const unique = (collection, uniqueAttr) =>
 
 const memoize = (wrappedFn) => {
     const cache = {}
-    return (arg) => { 
-        if(!cache[arg]) {
-            cache[arg] = wrappedFn(arg)
+    return (...args) => { 
+        const key = args.join(',')
+        if(!cache[key]) {
+            cache[key] = wrappedFn(...args)
         }
-        return cache[arg];
+        return cache[key];
     }
 }
 
