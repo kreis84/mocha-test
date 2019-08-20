@@ -1,9 +1,12 @@
 {
   "scripts": {
     "test": "mocha test",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "success": "cowsay 'ales good'"
   },
   "dependencies": {
+    "cowsay": "^1.4.0",
+    "lolcat": "^1.0.0",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1"
   }
