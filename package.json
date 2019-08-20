@@ -2,7 +2,7 @@
   "scripts": {
     "test": "mocha test",
     "coverage": "nyc npm run test",
-    "success": "cowsay 'ales good'"
+    "success": "cowsay -f daemon 'ales good'"
   },
   "dependencies": {
     "cowsay": "^1.4.0",
