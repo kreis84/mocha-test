@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "mocha test",
+    "coverage": "nyc npm run test"
+  },
+  "dependencies": {
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  }
+}
