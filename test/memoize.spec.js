@@ -72,16 +72,16 @@ describe('Memoize decorator', () => {
 
     })
 
-    it('should call wrapped function twice for different arraoy parameters', ()=>{
-        concat = (a,b) => a.concat(b)
+//     it('should call wrapped function twice for different arraoy parameters', ()=>{
+//         concat = (a,b) => a.concat(b)
 
-        const spy = sinon.spy(concat)
-        const memoizedConcat = memoize(spy)
-        const result1 = memoizedConcat([1,2], [3,4])
-        const result2 = memoizedConcat([2,3], [4,5])
-        const result3 = memoizedConcat([4,5], [2,3])
-        sinon.assert.calledTwice(spy)
-})
+//         const spy = sinon.spy(concat)
+//         const memoizedConcat = memoize(spy)
+//         const result1 = memoizedConcat([1,2], [3,4])
+//         const result2 = memoizedConcat([2,3], [4,5])
+//         const result3 = memoizedConcat([4,5], [2,3])
+//         sinon.assert.calledTwice(spy)
+// })
 
 // it('should call wrapped function twice for different arraoy parameters', ()=>{
 //     concat = (a,b) => a.concat(b)
