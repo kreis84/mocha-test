@@ -8,7 +8,12 @@ const fetchOffices = () =>
     fetch(`${baseURL}/offices`)
         .then((res) => res.json())
 
+const fetchGeoWithOffices = () => {
+
+}
+
 module.exports = {
     fetchGeo,
-    fetchOffices
+    fetchOffices,
+    fetchGeoWithOffices
 }
