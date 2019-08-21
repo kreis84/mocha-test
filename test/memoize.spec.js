@@ -5,8 +5,6 @@ chai.should()
 const sinon = require('sinon')
 const { Calculator } = require('../src/calc')
 
-
-
 describe('Memoize decorator', () => {
     it('should return same result as the wrapped function', () => {
         const square = (n) => n * n
@@ -73,4 +71,34 @@ describe('Memoize decorator', () => {
 
 
     })
+
+    it('should call wrapped function twice for different arraoy parameters', ()=>{
+        concat = (a,b) => a.concat(b)
+
+        const spy = sinon.spy(concat)
+        const memoizedConcat = memoize(spy)
+        const result1 = memoizedConcat([1,2], [3,4])
+        const result2 = memoizedConcat([2,3], [4,5])
+        const result3 = memoizedConcat([4,5], [2,3])
+        sinon.assert.calledTwice(spy)
+})
+
+// it('should call wrapped function twice for different arraoy parameters', ()=>{
+//     concat = (a,b) => a.concat(b)
+
+//     const spy = sinon.spy(concat)
+//     const memoizedConcat = memoize(spy)
+//     const result1 = memoizedConcat({v:1}, {v:2})
+//     const result2 = memoizedConcat({v:2}, {v:1})
+//     sinon.assert.calledOnce(spy)
+// })
+
+//     sinon.assert.calledTwice(spy)
+    // })
+    // it('', () => {
+    //     const concat = (arr1, arr2) => arr1.concat(arr2)
+    //     const memoizedConcat = memoize(concat)
+
+    //     const result6 = memoizedConcat([], [1,2])
+    // })
 })

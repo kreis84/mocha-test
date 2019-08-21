@@ -17,7 +17,7 @@ const unique = (collection, uniqueAttr) =>
 const memoize = (wrappedFn) => {
     const cache = {}
     return (...args) => { 
-        const key = args.join(',')
+        const key = JSON.stringify(args)
         if(!cache[key]) {
             cache[key] = wrappedFn(...args)
         }

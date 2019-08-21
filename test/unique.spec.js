@@ -1,4 +1,4 @@
-const { unique } = require('../src/utils');
+const { unique, memoize } = require('../src/utils');
 var assert = require('assert');
 
 describe('Unique operator', () => {
